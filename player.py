@@ -1,14 +1,13 @@
-import random 
+import random, constant
 class Player():
-    pv = 10
+    pv = None
     pw = None
-    coord = None
-
+    coord = ()
     def __init__(self, pv=10, pw=2):
         self.pv = pv
         self.pw = pw
         self.move()
     
-    def move():
-        coord = (random.randint(1,gamezone(0)), random.randint(1,gamezone(1)))
+    def move(self):
+        coord = (random.randint(1,constant.mapV), random.randint(1,constant.mapH))
 
