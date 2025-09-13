@@ -1,4 +1,4 @@
-import random, constant
+import random, constant, monster
 
 #Création de la classe Player
 class Player():
@@ -12,4 +12,5 @@ class Player():
     
     def move(self):
         self.coord = (random.randint(1,constant.mapV), random.randint(1,constant.mapH))
-
+    def attack(self):
+        self.hit = monster.Monster.pv = monster.Monster.pv - self.pw

@@ -15,9 +15,10 @@ monster_img = pygame.transform.flip(monster_img, True, False)
 
 my_font = pygame.font.SysFont('Comic Sans MS', 100)
 text_surface = my_font.render('Dungeon Term "PyGame Edition"', False, (255, 255, 255))
-
-
 text_rect = text_surface.get_rect(center=(width // 2, height // 2))
+
+
+
 black = 0, 0, 0
 # Calcul positions bas écran
 hero_x = width - hero_img.get_width()
