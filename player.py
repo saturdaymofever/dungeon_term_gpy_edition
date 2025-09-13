@@ -9,8 +9,9 @@ class Player():
         self.pv = pv
         self.pw = pw
         self.move()
+
     
     def move(self):
         self.coord = (random.randint(1,constant.mapV), random.randint(1,constant.mapH))
-    def attack(self):
-        self.hit = monster.Monster.pv = monster.Monster.pv - self.pw
+    def attack(self, monster):
+        monster.pv -= self.pw

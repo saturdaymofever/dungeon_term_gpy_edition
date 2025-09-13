@@ -5,8 +5,13 @@ pygame.init()
 pygame.font.init()
 pygame.display.set_caption("Dungeon Term Pygame Edition - Version: " + version )
 
-size = width, height = 1920,1080
+
+width = 1920
+height = 1080
+size = (width, height)
+
 screen = pygame.display.set_mode(size)
+
 hero_img = pygame.image.load("ressources/img/hero.png").convert_alpha()
 monster_img = pygame.image.load("ressources/img/monster.png").convert_alpha()
 hero_img = pygame.transform.scale(hero_img, (256, 256))
@@ -19,15 +24,13 @@ text_rect = text_surface.get_rect(center=(width // 2, height // 2))
 
 
 
-black = 0, 0, 0
+black = (0, 0, 0)
 # Calcul positions bas écran
+
 hero_x = width - hero_img.get_width()
 hero_y = height - hero_img.get_height()
 monster_x = 0
 monster_y = height - monster_img.get_height()
-
-
-screen = pygame.display.set_mode(size)
 
 run = True
 menu = True
@@ -37,8 +40,10 @@ while run:
         if event.type == pygame.QUIT: sys.exit()
 
 
+    #rendering
     screen.fill(black)
     screen.blit(text_surface, text_rect)
     screen.blit(hero_img,(hero_x,hero_y))
     screen.blit(monster_img,(0,monster_y))
+    #maj display
     pygame.display.flip()
