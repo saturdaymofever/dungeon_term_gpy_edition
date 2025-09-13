@@ -1,6 +1,7 @@
 import sys, pygame
 pygame.init()
 pygame.font.init()
+pygame.display.set_caption("Dungeon Term Pygame Edition"+version )
 my_font = pygame.font.SysFont('Comic Sans MS', 100)
 text_surface = my_font.render('Dungeon Term "PyGame Edition"', False, (255, 255, 255))
 size = width, height = 1920,1080
