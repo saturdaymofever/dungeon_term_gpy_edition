@@ -1,4 +1,5 @@
-import random, constant, player
+import random, constant
+
 
 
 #Création de la classe Monster
@@ -19,6 +20,6 @@ class Monster():
     def attack(self, player):
         player.pv -= self.pw
     def defname(self):
-        with open ("ressources/list/FR/monster.txt") as monsterlist:      
+        with open ("ressources/list/"+constant.lang+"/monster.txt") as monsterlist:      
             names = monsterlist.read().splitlines()
         self.name = random.choice(names)
