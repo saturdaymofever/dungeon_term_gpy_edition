@@ -5,5 +5,5 @@ version = 1
 mapV = 2
 mapH = 2
 
-#Choix de la langue
+#Choix de la langue ENG / FR 
 lang = 'ENG'
