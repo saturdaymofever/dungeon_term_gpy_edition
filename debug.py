@@ -2,10 +2,10 @@ import player, monster
 
 
 
-player1 = player.Player()
+player1 = player.Player(10,2)
 player1.move()
 
-monster1 = monster.Monster()
+monster1 = monster.Monster(8,1)
 monster1.move()
 
 player1.attack(monster1)
