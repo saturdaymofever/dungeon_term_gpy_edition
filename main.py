@@ -4,7 +4,7 @@ version = str(constant.version)
 pygame.init()
 pygame.font.init()
 pygame.display.set_caption("Dungeon Term Pygame Edition - Version: " + version )
-
+clock = pygame.time.Clock()
 
 width = 1920
 height = 1080
@@ -45,5 +45,6 @@ while run:
     screen.blit(text_surface, text_rect)
     screen.blit(hero_img,(hero_x,hero_y))
     screen.blit(monster_img,(0,monster_y))
+    clock.tick(60)
     #maj display
     pygame.display.flip()
