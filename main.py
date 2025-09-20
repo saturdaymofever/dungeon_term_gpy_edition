@@ -12,6 +12,8 @@ size = (width, height)
 
 screen = pygame.display.set_mode(size)
 
+
+bg = pygame.image.load("ressources/img/bg_menu.png")
 hero_img = pygame.image.load("ressources/img/hero.png").convert_alpha()
 monster_img = pygame.image.load("ressources/img/monster.png").convert_alpha()
 hero_img = pygame.transform.scale(hero_img, (256, 256))
@@ -22,9 +24,16 @@ my_font = pygame.font.SysFont('Comic Sans MS', 100)
 text_surface = my_font.render('Dungeon Term "PyGame Edition"', False, (255, 255, 255))
 text_rect = text_surface.get_rect(center=(width // 2, height // 2))
 
-
+# Initialiser le module mixer pour la gestion du son
+pygame.mixer.init()
+ 
+# Charger et jouer la musique d'ambiance
+pygame.mixer.music.load('ressources/music/menu.mp3')
+pygame.mixer.music.play(loops=-1)  # Joue en boucle infinie
 
 black = (0, 0, 0)
+red = (200, 0, 0)
+white = (255, 255, 255)
 # Calcul positions bas écran
 
 hero_x = width - hero_img.get_width()
@@ -35,16 +44,23 @@ monster_y = height - monster_img.get_height()
 run = True
 menu = True
 
+button_font = pygame.font.SysFont("Comic Sans MS", 60)
+button_text = button_font.render("Start Game", True, white)
+button_rect = button_text.get_rect(center=(width // 2, height // 1.5))
+button_box = button_rect.inflate(40, 20)  # rectangle un peu plus grand que le texte
+
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
 
 
     #rendering
-    screen.fill(black)
+    screen.blit(bg,(0,0))
     screen.blit(text_surface, text_rect)
     screen.blit(hero_img,(hero_x,hero_y))
     screen.blit(monster_img,(0,monster_y))
+    pygame.draw.rect(screen, red, button_box, border_radius=10)
+    screen.blit(button_text, button_rect)
     clock.tick(60)
     #maj display
     pygame.display.flip()
